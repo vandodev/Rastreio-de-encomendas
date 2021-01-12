@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function Page (){
+export default function Page (props){
     return(
         <View>
-            <Text>O nome da empresa é webCity</Text>
+             <Text>O nome da empresa é {props.empresa}</Text>
         </View>
     );
 } 

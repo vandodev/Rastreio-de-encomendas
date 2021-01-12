@@ -8,7 +8,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Rastreio</Text>
-      <Page />
+      <Page empresa='Webdesign'/>
+      <Page empresa='Programação'/>
+      <Page empresa='Desenvolvimento'/>
     </View>
   );
 }
