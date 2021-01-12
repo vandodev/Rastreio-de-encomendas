@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View } from 'react-native';
+import {Text, View, Button } from 'react-native';
 import {css} from './assets/css/Css';
 
 import Page from './views/Page';
 
 export default function App() {
 
-  const [product, setProduct] = useState('inicial');
+  const [product, setProduct] = useState('Bola');
+  const [quantify, setQuantify] = useState(0);
 
   useEffect(() => {
     setProduct('Novo produto');
@@ -14,7 +15,9 @@ export default function App() {
 
   const props={
     empresa: 'Desenvolvimento',
-    name: 'Evandro'
+    name: 'Evandro',
+    produto: product,
+    quantidade: quantify
   };
 
   return (
@@ -22,6 +25,7 @@ export default function App() {
       <Text>Rastreio</Text>
       <Text>{product}</Text>
       <Page {...props}/>
+      <Button title='Adicionar produtos' onPress={() => setQuantify(quantify + 1)} />
     </View>
   );
 }
