@@ -6,7 +6,9 @@ export default function Home (props){
     return(
         <View>
             <Text>Home</Text>
-            <Button title='Ir para o login' onPress={()=> props.navigation.navigate('Login')} />
+            <Button title='Ir para o login' onPress={()=> props.navigation.navigate('Login', {
+              id:30
+            })} />
         </View>
     );
 };
