@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View } from 'react-native';
 
-export default function Login (props){
+export default function Login ({route}){
     return(
         <View>
             <Text>Login</Text>
-            <Text>Login id = {props.route.params.id}</Text>
+            <Text>Login id = {route.params.id}</Text>
         </View>
     );
 };
