@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View } from 'react-native';
 
-export default function Login (){
+export default function AreaRestrita ({route}){
     return(
         <View>
-            <Text>Login</Text>
+            <Text>AreaRestrita</Text>
         </View>
     );
 };

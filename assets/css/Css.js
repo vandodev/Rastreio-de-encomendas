@@ -7,6 +7,17 @@ const css = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
+      container2: {
+        flex: 1,
+        flexDirection:'row',
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+  
+      button_home:{
+        marginRight:0
+      },
   
       textPage:{
           backgroundColor: 'orange', 
