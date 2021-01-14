@@ -24,9 +24,9 @@ export default function App() {
                 headerTintColor: '#333',
                 headerTitleStyle:{fontWeight:'bold', alignSelf:'center'}
               }}
-            />
+          />
 
-          <Stack.Screen name="Login" component={Login}/>
+          <Stack.Screen name="Login" options={{headerShown:false}} component={Login}/>
 
           <Stack.Screen name="Rastreio" component={Rastreio}/>
 
