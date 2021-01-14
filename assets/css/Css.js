@@ -29,13 +29,14 @@ const css = StyleSheet.create({
         backgroundColor: '#333'
         },
 
-        login__msg:{
-        fontWeight:'bold',
-        fontSize:22,
-        color:'red',
-        marginTop:10,
-        marginBottom:15
-        },
+        login__msg:(text='none')=>({
+            fontWeight:'bold',
+            fontSize:22,
+            color:'red',
+            marginTop:10,
+            marginBottom:15,
+            display:text
+          }),
 
         login__form:{
         width:'80%'

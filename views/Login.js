@@ -14,7 +14,7 @@ export default function Login (){
             </View>
 
             <View>
-                <Text style={css.login__msg}>Usuário ou senha inválidos</Text>
+                <Text style={css.login__msg()}>Usuário ou senha inválidos</Text>
             </View>
 
             <View style={css.login__form}>
