@@ -60,6 +60,10 @@ const css = StyleSheet.create({
         fontWeight:'bold',
         fontSize:22,
         color:'#333'
+        },
+
+        login__logomarca:{
+            marginBottom:10
         }
   });
 
