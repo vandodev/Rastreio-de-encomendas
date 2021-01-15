@@ -29,10 +29,11 @@ app.get('/read', async (req,res)=>{
 });
 
 app.get('/update', async (req,res)=> {
-    let update=await user.findByPk(4).then((response)=>{
-            response.name='alterado';
-            response.password='1234';
-            response.save();
+    let update=await user.findByPk(1,
+        {include:[{all:true}]}
+        ).then((response)=>{
+            response.Trackings[0].local='Nova alterado';
+            response.Trackings[0].save();
     });
 });
 
