@@ -21,6 +21,13 @@ app.get('/create',async (req,res)=>{
     res.send('Usuário criado com sucesso!');
 });
 
+app.get('/read', async (req,res)=>{
+    let read=await user.findAll({
+        raw:true,
+    });
+    console.log(read);
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port,(req,res)=>{
     console.log('Servidor Rodando');
