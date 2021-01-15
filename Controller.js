@@ -28,6 +28,14 @@ app.get('/read', async (req,res)=>{
     console.log(read);
 });
 
+app.get('/update', async (req,res)=> {
+    let update=await user.findByPk(4).then((response)=>{
+            response.name='alterado';
+            response.password='1234';
+            response.save();
+    });
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port,(req,res)=>{
     console.log('Servidor Rodando');
