@@ -37,6 +37,12 @@ app.get('/update', async (req,res)=> {
     });
 });
 
+app.get('/delete', async (req,res)=> {
+    user.destroy({
+        where: {id:4}
+    });
+});
+
 let port=process.env.PORT || 3000;
 app.listen(port,(req,res)=>{
     console.log('Servidor Rodando');
