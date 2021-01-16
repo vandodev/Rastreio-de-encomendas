@@ -23,7 +23,12 @@ export default function Login (){
         });
 
         let json = await response.json();
-        console.log(json);
+        if(json === 'error'){
+            setDisplay('flex');
+            setTimeout(()=>{
+                setDisplay('none');
+            },5000);
+        }
     }
 
     return(
