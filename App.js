@@ -4,6 +4,7 @@ import {css} from './assets/css/Css';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Home, Login, Rastreio} from './views';
+import AreaRestrita from './views/AreaRestrita'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,12 +13,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default function App() {
 
   const Stack = createStackNavigator();
-
-  async function text() {
-    let resData  = await AsyncStorage.getItem('userData');
-    console.log(JSON.parse(resData));
-  };
-  text();
    
   return (
     <NavigationContainer>
@@ -37,7 +32,7 @@ export default function App() {
 
           <Stack.Screen name="Rastreio" component={Rastreio}/>
 
-          {/* <Stack.Screen name="AreaRestrita" component={AreaRestrita}/> */}
+          <Stack.Screen name="AreaRestrita" component={AreaRestrita}/>
 
         </Stack.Navigator>
     </NavigationContainer>
