@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useState, useEffect} from 'react';
 import {Text, TextInput,TouchableOpacity, View, KeyboardAvoidingView,Platform, Image } from 'react-native';
 import {css} from '../assets/css/Css';
@@ -28,6 +29,11 @@ export default function Login (){
             setTimeout(()=>{
                 setDisplay('none');
             },5000);
+            await AsyncStorage.clear();
+        }else{
+           let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
+           let resData  = await AsyncStorage.getItem('userData');
+           console.log(JSON.parse(resData));
         }
     }
 

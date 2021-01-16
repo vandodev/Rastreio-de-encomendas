@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Text, View, Button} from 'react-native';
 import {css} from './assets/css/Css';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Home, Login, Rastreio} from './views';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,6 +13,12 @@ export default function App() {
 
   const Stack = createStackNavigator();
 
+  async function text() {
+    let resData  = await AsyncStorage.getItem('userData');
+    console.log(JSON.parse(resData));
+  };
+  text();
+   
   return (
     <NavigationContainer>
         <Stack.Navigator>
