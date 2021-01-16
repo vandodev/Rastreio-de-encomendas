@@ -9,6 +9,20 @@ export default function Login (){
     const [password, setPassword] = useState(null);
     const [login, setLogin] = useState(null);
 
+    async function sendForm(){
+        let response = await fetch('http://192.168.1.5:3000/login',{
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: user,
+                password: password
+            })
+        });
+    }
+
     return(
         <KeyboardAvoidingView
             style={[css.container, css.darkbg]}
@@ -28,7 +42,7 @@ export default function Login (){
                 <TextInput placeholder='Usuário' onChangeText={text =>setUser(text)} style={css.login__input}  />
                 <TextInput placeholder='Senha' onChangeText={text =>setPassword(text)}  style={css.login__input} secureTextEntry={true}/>
 
-                <TouchableOpacity  style={css.login__button} onPress={()=> setDisplay('flex')}>
+                <TouchableOpacity  style={css.login__button} onPress={()=> sendForm()}>
                     <Text  style={css.login__bottonText}>Entrar</Text>
                 </TouchableOpacity>
 
