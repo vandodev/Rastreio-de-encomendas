@@ -12,8 +12,15 @@ let user = models.User;
 let tracking = models.Tracking;
 let product = models.Product;
 
-app.post('/login', (req, res) =>{
-    console.log(req.body);
+app.post('/login',async (req,res)=>{
+    let response=await user.findOne({
+        where:{name:req.body.name, password: req.body.password}
+    });
+    if(response === null){
+        res.send(JSON.stringify('error'));
+    }else{
+        res.send(response);
+    }
 });
 
 let port=process.env.PORT || 3000;

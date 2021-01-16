@@ -21,6 +21,9 @@ export default function Login (){
                 password: password
             })
         });
+
+        let json = await response.json();
+        console.log(json);
     }
 
     return(
@@ -31,7 +34,7 @@ export default function Login (){
 
             <View>
                 <Image source={require('../assets/img/logomarca.png')} />
-                <Text>{user} - {password}</Text>
+                {/* <Text>{user} - {password}</Text> */}
             </View>
 
             <View>
