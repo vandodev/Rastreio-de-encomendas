@@ -5,6 +5,9 @@ import {css} from '../assets/css/Css';
 export default function Login (){
 
     const [display, setDisplay] = useState('none');
+    const [user, setUser] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [login, setLogin] = useState(null);
 
     return(
         <KeyboardAvoidingView
@@ -14,6 +17,7 @@ export default function Login (){
 
             <View>
                 <Image source={require('../assets/img/logomarca.png')} />
+                <Text>{user} - {password}</Text>
             </View>
 
             <View>
@@ -21,8 +25,8 @@ export default function Login (){
             </View>
 
             <View style={css.login__form}>
-                <TextInput placeholder='Usuário'  style={css.login__input} />
-                <TextInput placeholder='Senha'  style={css.login__input} secureTextEntry={true}/>
+                <TextInput placeholder='Usuário' onChangeText={text =>setUser(text)} style={css.login__input}  />
+                <TextInput placeholder='Senha' onChangeText={text =>setPassword(text)}  style={css.login__input} secureTextEntry={true}/>
 
                 <TouchableOpacity  style={css.login__button} onPress={()=> setDisplay('flex')}>
                     <Text  style={css.login__bottonText}>Entrar</Text>
