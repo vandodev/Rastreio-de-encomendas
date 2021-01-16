@@ -4,7 +4,7 @@ import {css} from './assets/css/Css';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Home, Login, Rastreio} from './views';
-import AreaRestrita from './views/AreaRestrita'
+import AreaRestrita from "./views/arearestrita/AreaRestrita";
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
