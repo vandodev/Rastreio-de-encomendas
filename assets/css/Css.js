@@ -64,6 +64,13 @@ const css = StyleSheet.create({
 
         login__logomarca:{
             marginBottom:10
+        },
+
+        area__tab:{
+          backgroundColor:'#333',
+          fontSize:20,
+          fontWeight:'bold',
+          color: '#333'
         }
   });
 
