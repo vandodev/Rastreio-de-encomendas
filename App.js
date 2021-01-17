@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {Text, View, Button} from 'react-native';
 import {css} from './assets/css/Css';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Home, Login, Rastreio} from './views';
 import AreaRestrita from "./views/arearestrita/AreaRestrita";
 
