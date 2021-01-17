@@ -2,14 +2,42 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useState, useEffect} from 'react';
 import {Text, TextInput,TouchableOpacity, View, KeyboardAvoidingView,Platform, Image } from 'react-native';
 import {css} from '../assets/css/Css';
-
+import * as LocalAuthentication from 'expo-local-authentication';
 
 export default function Login ({navigation}){
 
     const [display, setDisplay] = useState('none');
     const [user, setUser] = useState(null);
     const [password, setPassword] = useState(null);
-    const [login, setLogin] = useState(null);
+    const [login, setLogin] = useState(false);
+
+    useEffect(()=>{
+      verifyLogin();
+    },[]);
+
+    useEffect(()=>{
+        if(login === true){
+            biometric();
+        }
+    },[login]);
+
+    //Verifica se o usuário já possui algum login
+    async function verifyLogin()
+    {
+        let response=await AsyncStorage.getItem('userData');
+        let json=await JSON.parse(response);
+        if(json !== null){
+            setUser(json.name);
+            setPassword(json.password);
+            setLogin(true);
+        }
+    };
+
+    //Biometria
+    async function biometric()
+    {
+        console.log('Chamando biometria');
+    }
 
     async function sendForm(){
         let response = await fetch('http://192.168.1.5:3000/login',{
