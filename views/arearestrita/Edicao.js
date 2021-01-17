@@ -1,11 +1,12 @@
 import React , {useState, useEffect} from 'react';
 import {Text, View } from 'react-native';
+import MenuAreaRestrita from "../../assets/components/MenuAreaRestrita";
 
-export default function Edicao(){
+export default function Edicao ({navigation}){
 
     return(
-       <View>
-           <Text>Edição</Text>
+        <View>
+             <MenuAreaRestrita title='Cadastro' navigation={navigation} />
         </View>
     );
 };

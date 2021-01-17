@@ -14,6 +14,10 @@ const css = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
+
+      containerTop:{
+        justifyContent:'flex-start',  
+      },
   
       button_home:{
         marginRight:0
