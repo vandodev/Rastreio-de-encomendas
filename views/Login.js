@@ -36,7 +36,21 @@ export default function Login ({navigation}){
     //Biometria
     async function biometric()
     {
-        console.log('Chamando biometria');
+            let compatible= await LocalAuthentication.hasHardwareAsync();
+        if(compatible){
+            let biometricRecords = await LocalAuthentication.isEnrolledAsync();
+            if(!biometricRecords){
+                alert('Biometria não cadastrada');
+            }else{
+                let result=await  LocalAuthentication.authenticateAsync();
+                if(result.success){
+                    sendForm();
+                }else{
+                    setUser(null);
+                    setPassword(null);
+                }
+            }
+        }
     }
 
     async function sendForm(){
